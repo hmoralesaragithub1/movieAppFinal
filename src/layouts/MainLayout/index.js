@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { styled, useTheme } from "@mui/material/styles";
 import { Outlet, Navigate, useNavigate } from "react-router-dom";
+import { DrawerCart } from "../../components";
 import {
 	Box,
 	Toolbar,
@@ -14,6 +15,7 @@ import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
+	Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiDrawer from "@mui/material/Drawer";
@@ -139,9 +141,18 @@ const MainLayout = () => {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" noWrap component="div">
-						{user.name}
-					</Typography>
+					<Stack
+						sx={{
+							width: "100%",
+						}}
+						direction="row"
+						justifyContent="space-between"
+					>
+						<Typography variant="h6" noWrap component="div">
+							{user.name}
+						</Typography>
+						<DrawerCart />
+					</Stack>
 				</Toolbar>
 			</AppBar>
 			<Drawer variant="permanent" open={open}>
