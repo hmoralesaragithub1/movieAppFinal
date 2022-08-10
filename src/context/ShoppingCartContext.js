@@ -45,9 +45,27 @@ export const ShoppingCartProvider = ({ children }) => {
     saveInLocalStorage(items);
   }
 
+  function downOne(id) {
+    const movie = movieIsInCart(id);
+    if (movie === undefined) return;
+    if (movie.quantity >= 10) return;
+    const index = items.findIndex(
+      (item) => item.movie.imdbID === id && item.user_id === user.id
+    );
+    movie.quantity--;
+
+    if (movie.quantity <= 0) {
+      const newItems = items.filter((item) => item.id !== index);
+      setItems(newItems);
+    }
+    items[index] = movie;
+    setItems([...items]);
+    saveInLocalStorage(items);
+  }
+
   return (
     <ShoppingCartContext.Provider
-      value={{ items, saveInCart, movieIsInCart, upOne }}
+      value={{ items, saveInCart, movieIsInCart, upOne, downOne }}
     >
       {children}
     </ShoppingCartContext.Provider>
