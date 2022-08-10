@@ -56,7 +56,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
     if (movie.quantity <= 0) {
       const newItems = items.filter((item) => item.id !== index);
-      setItems(newItems);
+      setItems([...newItems]);
       saveInLocalStorage(items);
       return;
     }
