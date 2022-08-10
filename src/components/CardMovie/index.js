@@ -37,7 +37,7 @@ const CartButton = ({ movie }) => {
           variant="contained"
           aria-label="outlined primary button group"
         >
-          <Button onClick={() => downOne(movie.imdbID)}>-</Button>
+          <Button onClick={() => console.log("decrementa")}>-</Button>
           <Typography
             sx={{
               width: 40,
