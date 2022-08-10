@@ -48,7 +48,7 @@ export const ShoppingCartProvider = ({ children }) => {
   function downOne(id) {
     const movie = movieIsInCart(id);
     if (movie === undefined) return;
-    if (movie.quantity >= 10) return;
+
     const index = items.findIndex(
       (item) => item.movie.imdbID === id && item.user_id === user.id
     );
