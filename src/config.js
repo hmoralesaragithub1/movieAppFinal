@@ -1,11 +1,7 @@
-const ODMB_API_KEY = process.env.REACT_APP_OMDB_API_KEY || "";
-const ODMB_BASE_URL = process.env.REACT_APP_OMDB_BASE_URL || "";
+const ODMB_API_KEY = process.env.REACT_APP_OMDB_API_KEY;
+const ODMB_BASE_URL = process.env.REACT_APP_OMDB_BASE_URL;
 
-console.log(
-  "apikey",
-  process.env.REACT_APP_OMDB_API_KEY,
-  process.env.REACT_APP_OMDB_BASE_URL
-);
+console.log("apikey", ODMB_API_KEY, ODMB_BASE_URL);
 
 const api = {
   apiUrl: ODMB_BASE_URL,
