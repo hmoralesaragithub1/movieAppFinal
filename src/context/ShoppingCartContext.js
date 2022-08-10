@@ -54,10 +54,11 @@ export const ShoppingCartProvider = ({ children }) => {
     );
     movie.quantity--;
 
-    if (movie.quantity <= 0) {
+    if (movie.quantity < 2) {
       const newItems = items.filter(
         (item) => item.movie.imdbID !== id && item.user_id !== user.id
       );
+      localStorage.removeItem("movieapp.shoppingcart");
       setItems(newItems);
       saveInLocalStorage(items);
       return;
