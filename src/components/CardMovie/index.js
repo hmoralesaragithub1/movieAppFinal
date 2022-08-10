@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { MovieFavoriteContext, ShoppingCartContext } from "../../context";
 import {
-  Button,
   ButtonGroup,
   Card,
   CardContent,
