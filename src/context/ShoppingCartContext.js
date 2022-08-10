@@ -58,7 +58,7 @@ export const ShoppingCartProvider = ({ children }) => {
       const newItems = items.filter(
         (item) => item.movie.imdbID !== id && item.user_id !== user.id
       );
-      setItems([...newItems]);
+      setItems(newItems);
       saveInLocalStorage(items);
       return;
     }
