@@ -4,8 +4,8 @@ const ODMB_BASE_URL = process.env.REACT_APP_OMDB_BASE_URL;
 console.log("apikey", ODMB_API_KEY, ODMB_BASE_URL);
 
 const api = {
-  apiUrl: ODMB_BASE_URL,
-  apiKey: ODMB_API_KEY,
+  url: ODMB_BASE_URL,
+  key: ODMB_API_KEY,
 };
 
 export const authUsers = [
